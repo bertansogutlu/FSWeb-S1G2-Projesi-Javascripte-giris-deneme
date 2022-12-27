@@ -20,11 +20,8 @@ Aşağıdakileri yapın:
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
 
-let surucuYasi = 20;
-function surucu() {
-return console.log(surucuYasi > 18);
-}
-surucu();
+let surucuYasi = 18;
+console.log(surucuYasi > 18);
 
 
 /*
@@ -71,7 +68,7 @@ Aşağıdakileri yapın:
 function carpma(a,b) {
 return a * b;
 }
-console.log(carpma(3,4));
+
 
 /* Görev 2 : Köpeğin Yaşı */
 
@@ -86,7 +83,7 @@ function kopeginYasi(insanYas) {
   let kopekYas = insanYas * 7;
   return kopekYas;
 }
-console.log(kopeginYasi(10));
+
 
 
 
@@ -147,7 +144,7 @@ function oyun(oyuncu,bilgisayar) {
   }
 }
 
-console.log(oyun("Taş",pc));
+
 
 /* Görev 4 : Metrik Dönüştürücü */
 
@@ -159,11 +156,11 @@ Aşağdakileri milDonusturucu fonksiyonunu kullanarak yapın:
 3. Mil değerini geri dönün
 */
 
-function milDonusturucu(km){
+function milDonusturucu(km) {
   const mil = 0.621371
   return km * mil;
 }
-console.log(milDonusturucu(5));
+
 
 
 
@@ -175,11 +172,11 @@ Aşağıdakileri feetDonusturucu fonsiyonunu kullanarak yapın:
 3. feet değerini geri dönün
 */
 
-function feetDonusturucu(cm){
-  const feet = 0.0328084
-  return cm * feet;
+function feetDonusturucu(cm) {
+  const feet = 30.48;
+  return cm / feet;
 }
-console.log(feetDonusturucu(30));
+
 
 
 
@@ -197,9 +194,9 @@ Aşağıdakileri cocukSarkisi fonksiyonunda yapın:
 */
 
 function cocukSarkisi(num){
-  return console.log(`${num} küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!`);
+  return `${num} küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!`;
 }
-maymunSayisi = 5;
+const maymunSayisi = 5;
 for (let i = maymunSayisi; i > 0; i--) {
   cocukSarkisi(i);
 }
@@ -222,22 +219,22 @@ Aşağdakileri notHesapla fonksiyonunda yapın.
 
 function notHesapla(not) {
   if (not >= 90 && not <= 100) {
-    return console.log("A aldin");
+    return "A aldın";
   }
   else if (not >= 80 && not <= 89) {
-    return console.log("B aldin");
+    return "B aldın";
   }
   else if (not >= 70 && not <= 79) {
-    return console.log("C aldin");
+    return "C aldın";
   }
   else if (not >= 60 && not <= 69) {
-    return console.log("D aldin");
+    return "D aldın";
   }
   else {
-    return console.log("F aldin");
+    return "F aldın";
   }
 }
-  notHesapla(80);
+
 
 
 
