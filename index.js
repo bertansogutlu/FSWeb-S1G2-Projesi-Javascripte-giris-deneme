@@ -113,34 +113,16 @@ const pos = ["Taş","Kağıt","Makas"];
 let pc = pos[num];
 
 function oyun(oyuncu,bilgisayar) {
-  if ( (bilgisayar === "Makas" && oyuncu === "Kağıt") || (bilgisayar === "Kağıt" && oyuncu === "Makas") ) {
-    if (bilgisayar === "Makas") {
-    return "Kaybettin!";
-    }
-    else {
+  if ((oyuncu === "Makas" && bilgisayar === "Kağıt")
+    ||(oyuncu === "Kağıt" && bilgisayar === "Taş")
+    ||(oyuncu === "Taş" && bilgisayar === "Makas")) {
     return "Kazandın!";
-    }
   }
-
-  else if ( (bilgisayar === "Kağıt" && oyuncu === "Taş") || (bilgisayar === "Taş" && oyuncu === "Kağıt") ) {
-    if (bilgisayar === "Kağıt") {
-    return "Kaybettin!";
-    }
-    else {
-    return "Kazandın!";
-    }
-  }
-
-  else if ( (bilgisayar === "Taş" && oyuncu === "Makas") || (bilgisayar === "Makas" && oyuncu === "Taş") ) {
-    if (bilgisayar === "Taş") {
-    return "Kaybettin!";
-    }
-    else {
-    return "Kazandın!";
-    }
+  else if (oyuncu === bilgisayar) {
+    return "Beraberlik";
   }
   else {
-  return "Beraberlik";
+    return "Kaybettin!";
   }
 }
 
@@ -196,8 +178,7 @@ Aşağıdakileri cocukSarkisi fonksiyonunda yapın:
 function cocukSarkisi(num){
   return `${num} küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!`;
 }
-const maymunSayisi = 5;
-for (let i = maymunSayisi; i > 0; i--) {
+for (let i = 5; i > 0; i--) {
   cocukSarkisi(i);
 }
 
@@ -218,16 +199,16 @@ Aşağdakileri notHesapla fonksiyonunda yapın.
 */
 
 function notHesapla(not) {
-  if (not >= 90 && not <= 100) {
+  if (not >= 90) {
     return "A aldın";
   }
-  else if (not >= 80 && not <= 89) {
+  else if (not >= 80) {
     return "B aldın";
   }
-  else if (not >= 70 && not <= 79) {
+  else if (not >= 70) {
     return "C aldın";
   }
-  else if (not >= 60 && not <= 69) {
+  else if (not >= 60 &&) {
     return "D aldın";
   }
   else {
@@ -249,17 +230,18 @@ Aşağıdakileri sesliHarfSayaci fonskiyonunda yapın.
 İPUCU - .includes() methoduna bakabilirsin. (https://www.w3schools.com/jsref/jsref_includes.asp)
 */
 
-function sesliHarfSayaci(kelime) {
+
+
+function sesliHarfSayaci2(kelime) {
   let sayac = 0;
   const vowels = ["a", "e", "i", "o", "u"];
   let kucukHarfKelime = kelime.toLowerCase();
-  for (const i in kucukHarfKelime) {
-    for (const j in vowels) {
-      if (kucukHarfKelime[i] === vowels[j]) sayac++;
-    }
+  for (let i in kucukHarfKelime) {
+    if (vowels.includes(kucukHarfKelime[i])) sayac++;
   }
 	return sayac;
 }
+
 console.log(sesliHarfSayaci("JavaScript Ogreniyorum!"))
 
 /* Lütfen bu satırın alt tarafını değiştirmeyin */
